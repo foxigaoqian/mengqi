@@ -80,78 +80,81 @@
   
   <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
     <!-- Navigation - White, Top-fixed, No Gradient -->
-<header class="header-fixed py-4">
+<header class="fixed top-0 w-full bg-white shadow z-50">
   <div class="container mx-auto px-4 md:px-6">
 
-    <!-- checkbox 控制器（隐藏） -->
-    <input type="checkbox" id="menu-toggle" class="hidden" />
+    <!-- peer 控制器 -->
+    <input type="checkbox" id="menu-toggle" class="peer hidden" />
 
-    <div class="flex justify-between items-center relative">
+    <div class="flex items-center justify-between h-16">
 
-      <!-- LOGO -->
+      <!-- Logo -->
       <div class="flex items-center">
-        <img src="images/logo.jpg" alt="Logo"
-             class="h-10 w-auto mr-2 object-contain" />
+        <img
+          src="images/logo.jpg"
+          alt="Logo"
+          class="h-10 w-auto mr-2 object-contain"
+        />
         <span class="text-xl font-bold text-gray-800">
           Playground Equipment Experts
         </span>
       </div>
 
-      <!-- 汉堡按钮 -->
-      <label for="menu-toggle"
-             class="hamburger md:hidden text-3xl cursor-pointer select-none">
+      <!-- 汉堡 -->
+      <label
+        for="menu-toggle"
+        class="md:hidden text-3xl cursor-pointer select-none"
+      >
         ☰
       </label>
 
-      <!-- 菜单 -->
-      <nav
-  id="nav-menu"
-  class="
-    hidden
-    absolute
-    top-full
-    left-0
-    w-full
-    bg-white
-    shadow-lg
-    flex-col
-    space-y-4
-
-    sm:flex
-    sm:flex-row
-    sm:space-y-0
-    sm:space-x-8
-
-    sm:static
-    sm:w-auto
-    sm:bg-transparent
-    sm:shadow-none
-  "
->
-
+      <!-- 桌面菜单 -->
+      <nav class="hidden md:flex md:items-center md:space-x-8">
         <a href="#products" class="text-gray-700 hover:text-orange-500">
           Products
         </a>
-
         <a href="#applications" class="text-gray-700 hover:text-orange-500">
           Applications
         </a>
-
         <a href="#faq" class="text-gray-700 hover:text-orange-500">
           FAQ
         </a>
-
-        <a href="https://wa.me/8615868777734"
+        <a
+          href="https://wa.me/8615868777734"
           target="_blank"
-          class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg w-fit"
+          class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg"
         >
           Get Quote
         </a>
       </nav>
-
     </div>
+
+    <!-- 移动端菜单 -->
+    <nav
+      class="
+        hidden
+        peer-checked:flex
+        flex-col
+        gap-4
+        py-6
+        md:hidden
+      "
+    >
+      <a href="#products" class="text-gray-700">Products</a>
+      <a href="#applications" class="text-gray-700">Applications</a>
+      <a href="#faq" class="text-gray-700">FAQ</a>
+      <a
+        href="https://wa.me/8615868777734"
+        target="_blank"
+        class="bg-orange-500 text-white px-4 py-2 rounded-lg w-fit"
+      >
+        Get Quote
+      </a>
+    </nav>
+
   </div>
 </header>
+
 
 
     <main>
