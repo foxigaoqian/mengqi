@@ -10,24 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ 检出仓库
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      # 2️⃣ 安装 Node（必要）
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install Tailwind
-        run: npm install tailwindcss@3.4.17
+      # 3️⃣ 安装 Tailwind CLI（临时，不需要 package.json）
+      - name: Install Tailwind CLI
+        run: npm install -g tailwindcss@3.4.17
 
-      - name: Build CSS
-        run: |
-          npx tailwindcss \
-            -i input.css \
-            -o css/style.css \
-            --minify
+      # 4️⃣ 确保 css 目录存在
+      - name: Make CSS directory
+        run: mkdir -p css
 
+      # 5️⃣ 构建 CSS
+      - name: Build Tailwind CSS
+        run: tailwindcss -i input.css -o css/style.css --minify
+
+      # 6️⃣ Commit & push CSS
       - name: Commit generated CSS
         run: |
           git config user.name "github-actions"
