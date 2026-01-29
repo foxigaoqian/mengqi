@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # 可以手动触发
+  workflow_dispatch: # 可手动触发
 
 jobs:
   build:
@@ -33,9 +33,9 @@ jobs:
       - name: Build Tailwind CSS
         run: tailwindcss -i input.css -o css/style.css --minify
 
-      # 6️⃣ Upload artifact (optional, 可以下载)
+      # 6️⃣ Upload artifact (可选下载 CSS)
       - name: Upload CSS artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: style-css
           path: css/style.css
