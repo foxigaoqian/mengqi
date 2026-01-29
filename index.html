@@ -73,53 +73,107 @@
       }
       .accordion-icon {
         transition: transform 0.3s ease;
-      }
+      }.logo-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}.nav {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #374151;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #f97316; /* 橙色 */
+}
+
+.quote-btn {
+  background: #f97316;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quote-btn:hover {
+  background: #ea580c;
+}
+
+/* 汉堡按钮 */
+.hamburger {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 展开菜单 */
+.nav.show {
+  display: flex;
+}
+
+/* 桌面端布局 */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* 桌面端隐藏汉堡 */
+  }
+
+  .nav {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0;
+  }
+
+  .nav a {
+    margin-top: 0;
+  }
+}
     </style>
   </head>
   
   <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
     <!-- Navigation - White, Top-fixed, No Gradient -->
-<header class="header-fixed py-4 bg-white shadow-md">
-  <div class="container mx-auto px-4 md:px-6">
-    <!-- 父容器：移动端垂直，桌面端水平 -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
-
-      <!-- 左侧 Logo + 移动端汉堡 -->
-      <div class="flex items-center w-full md:w-auto mb-4 md:mb-0 justify-between">
-        <div class="flex items-center">
-          <img src="images/logo.jpg" alt="Logo" class="h-10 w-auto mr-2 object-contain" />
-          <span class="text-xl font-bold text-gray-800">Playground Equipment Experts</span>
+    <header class="header-fixed py-4">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex justify-between items-center">
+         <div class="flex items-center">
+  <img src="images/logo.jpg" alt="Logo" class="h-10 w-auto mr-2 object-contain" />
+  <span class="text-xl font-bold text-gray-800">Playground Equipment Experts</span>
+</div>
+          
+          <nav class="hidden md:flex space-x-8" id="nav-menu">
+            <a href="#products" class="text-gray-700 hover:text-orange-500 transition-colors">Products</a>
+            <a href="#applications" class="text-gray-700 hover:text-orange-500 transition-colors">Applications</a>
+            <a href="#faq" class="text-gray-700 hover:text-orange-500 transition-colors">FAQ</a>
+           <a href="https://wa.me/8615868777734" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
+  Get Quote
+</a>
+            </a>
+          </nav>
+          
+      <!-- 汉堡按钮（移动端显示）-->
+      <button class="hamburger" id="hamburger-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
         </div>
-        <!-- 移动端汉堡按钮 -->
-        <button id="mobile-menu-btn" class="md:hidden text-gray-700 focus:outline-none">
-          <i class="fa-solid fa-bars text-xl"></i>
-        </button>
       </div>
-
-      <!-- 菜单 -->
-      <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row items-start md:items-center w-full md:w-auto space-y-2 md:space-y-0 md:space-x-8">
-        <a href="#products" class="text-gray-700 hover:text-orange-500 transition-colors">Products</a>
-        <a href="#applications" class="text-gray-700 hover:text-orange-500 transition-colors">Applications</a>
-        <a href="#faq" class="text-gray-700 hover:text-orange-500 transition-colors">FAQ</a>
-        <a href="https://wa.me/8615868777734" target="_blank" 
-           class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
-          Get Quote
-        </a>
-      </nav>
-
-    </div>
-  </div>
-</header>
-
-<!-- 移动端折叠菜单 JS -->
+    </header>
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  const btn = document.getElementById('hamburger-btn');
+  const menu = document.getElementById('nav-menu');
   btn.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+    menu.classList.toggle('show');
   });
 </script>
-
    
     <main>
       <!-- Hero Section -->
