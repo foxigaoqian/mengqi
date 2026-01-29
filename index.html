@@ -109,14 +109,14 @@
 }
 
 /* 菜单 */
-.nav {
+.hidden {
   display: none;
   flex-direction: column;
   margin-top: 1rem;
 }
 
 /* 展开菜单 */
-.nav.show {
+.hidden.show {
   display: flex;
 }
 
@@ -126,7 +126,7 @@
     display: none; /* 桌面端隐藏汉堡 */
   }
 
-  .nav {
+  .hidden {
     display: flex !important;
     flex-direction: row;
     align-items: center;
