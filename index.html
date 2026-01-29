@@ -81,55 +81,29 @@
   <body class="bg-gray-50 text-gray-900 overflow-x-hidden">
     <!-- Navigation - White, Top-fixed, No Gradient -->
 <header class="header-fixed py-4">
-  <div class="container mx-auto px-4 md:px-6 header-container">
-    <div class="logo-nav-wrapper">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex flex-col md:flex-row md:items-center">
+
       <!-- Logo -->
-      <div class="logo">
+      <div class="flex items-center mb-4 md:mb-0">
         <img src="images/logo.jpg" alt="Logo" class="h-10 w-auto mr-2 object-contain" />
         <span class="text-xl font-bold text-gray-800">Playground Equipment Experts</span>
       </div>
 
       <!-- Nav menu -->
-      <nav class="nav-menu">
-        <a href="#products" class="text-gray-700 hover:text-orange-500 transition-colors">Products</a>
-        <a href="#applications" class="text-gray-700 hover:text-orange-500 transition-colors">Applications</a>
-        <a href="#faq" class="text-gray-700 hover:text-orange-500 transition-colors">FAQ</a>
+      <nav class="flex flex-row flex-wrap md:flex-nowrap gap-4 md:ml-auto">
+        <a href="#products" class="text-gray-700 hover:text-orange-500 transition-colors px-2 py-1">Products</a>
+        <a href="#applications" class="text-gray-700 hover:text-orange-500 transition-colors px-2 py-1">Applications</a>
+        <a href="#faq" class="text-gray-700 hover:text-orange-500 transition-colors px-2 py-1">FAQ</a>
         <a href="https://wa.me/8615868777734" target="_blank" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg transition-colors">
           Get Quote
         </a>
       </nav>
+
     </div>
   </div>
-
-  <style>
-    /* 父容器 flex 布局 */
-    .logo-nav-wrapper {
-      display: flex;
-      flex-direction: column; /* 默认移动端垂直 */
-      gap: 0.5rem; /* 元素间距 */
-    }
-
-    .nav-menu {
-      display: flex;
-      flex-direction: column; /* 默认垂直排列 */
-      gap: 0.5rem;
-    }
-
-    /* 桌面端 */
-    @media (min-width: 768px) {
-      .logo-nav-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .nav-menu {
-        flex-direction: row; /* 水平排列 */
-        gap: 2rem; /* 水平间距 */
-      }
-    }
-  </style>
 </header>
+
 
 
     <main>
